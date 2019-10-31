@@ -20,7 +20,7 @@ getPage1R = do
                 PAGINA 1
             
             <div>
-                <a href=@{Page1R}>
+                <a href=@{HomeR}>
                     Voltar
         |]
 
