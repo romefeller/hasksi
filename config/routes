@@ -3,5 +3,6 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ HomeR GET 
-/ads.txt AdsR GET
+/        HomeR  GET 
+/ads.txt AdsR   GET
+/p1      Page1R GET
