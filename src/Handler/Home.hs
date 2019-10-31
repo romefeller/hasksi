@@ -7,6 +7,7 @@
 module Handler.Home where
 
 import Import
+import Data.FileEmbed (embedFile)
 --import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 
