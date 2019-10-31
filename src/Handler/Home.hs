@@ -22,8 +22,8 @@ getPage2R :: Handler Html
 getPage2R = do 
     defaultLayout $ do 
         $(whamletFile "templates/page2.hamlet")
-        $(luciusFile "templates/page2.lucius")
-        $(juliusFile "templates/page2.julius")
+        toWidgetHead $(luciusFile "templates/page2.lucius")
+        toWidgetHead $(juliusFile "templates/page2.julius")
 
 getPage1R :: Handler Html
 getPage1R = do 
