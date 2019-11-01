@@ -65,6 +65,19 @@ getHomeR = do
             <h1>
                 OLA MUNDO!
             
+            <ul>
+                <li>
+                    <a href=@{Page1R}>
+                        PAGINA 1
+                
+                <li>
+                    <a href=@{Page2R}>
+                        PAGINA 2
+                
+                <li>
+                    <a href=@{Page3R}>
+                        PAGINA 3
+            
             <img src=@{StaticR pikachu_jpg}>
             
             <button class="btn btn-danger" onclick="ola()">
