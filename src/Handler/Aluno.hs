@@ -11,6 +11,7 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Postgresql
 
+-- renderDivs
 formAluno :: Form Aluno 
 formAluno = renderBootstrap $ Aluno 
     <$> areq textField "Nome: " Nothing 
@@ -50,4 +51,15 @@ postAlunoR = do
             redirect AlunoR
         _ -> redirect HomeR
 
+getListAlunoR :: Handler Html 
+getListAlunoR = do 
+    -- select * from aluno order by aluno.nome
+    alunos <- runDB $ selectList [] [Asc AlunoNome]
+    defaultLayout $ do 
+        $(whamletFile "templates/alunos.hamlet")
 
+postApagarAlunoR :: AlunoId -> Handler Html 
+postApagarAlunoR aid = do 
+    _ <- runDB $ get404 aid
+    runDB $ delete aid 
+    redirect ListAlunoR
