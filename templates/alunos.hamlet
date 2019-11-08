@@ -11,7 +11,7 @@
     <tbody>
         $forall Entity aid aluno <- alunos 
             <tr>
-                <td id=#{show (fromSqlKey aid)}>
+                <td id=#{"nome" ++ show (fromSqlKey aid)}>
                     #{alunoNome aluno}
                 <td>
                     #{alunoRa aluno}
