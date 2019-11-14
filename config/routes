@@ -11,3 +11,5 @@
 /aluno   AlunoR GET POST
 /listar  ListAlunoR GET 
 /aluno/#AlunoId/apagar ApagarAlunoR POST
+
+/cadastrar UsuarioR GET POST
