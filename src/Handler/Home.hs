@@ -44,6 +44,7 @@ getAdsR = return $ TypedContent "text/plain"
 
 getHomeR :: Handler Html
 getHomeR = do 
+    sess <- lookupSession "_NOME"
     defaultLayout $ do 
         -- addScriptRemote "url" -> CHAMA JS EXTERNO
         -- addScript (StaticR script_js), ONDE script 
@@ -77,8 +78,16 @@ getHomeR = do
                 <li>
                     <a href=@{Page3R}>
                         PAGINA 3
-            
-            <img src=@{StaticR pikachu_jpg}>
+                
+                $maybe nome <- sess
+                    <li>
+                        Ola #{nome}
+                    <form method=post action=@{SairR}>
+                        <input type="submit" value="Sair">
+                $nothing
+                    <li>
+                        Convidado!
+                    <img src=@{StaticR pikachu_jpg}>
             
             <button class="btn btn-danger" onclick="ola()">
                 OLA
